@@ -169,7 +169,7 @@ Polymer({
           <span class="parent">[[i18n('browse.root')]]</span>
         </a>
         <template is="dom-repeat" items="[[parents]]" as="item">
-          <a href$="[[urlFor('browse', item.path)]]">
+          <a href$="[[urlFor('browse', item)]]">
             <span><iron-icon icon="icons:chevron-left"></iron-icon></span>
             <span class="parent">[[item.title]]</span>
           </a>
@@ -182,7 +182,7 @@ Polymer({
             <iron-icon icon="[[_expandIcon(opened)]]" toggle hidden$="[[loading]]"></iron-icon>
           </template>
           <span class="node-name flex">
-            <a href$="[[urlFor('browse', item.path)]]">[[_title(item)]]</a>
+            <a href$="[[urlFor('browse', item)]]">[[_title(item)]]</a>
           </span>
         </template>
       </nuxeo-tree>
