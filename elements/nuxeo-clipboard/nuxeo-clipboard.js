@@ -297,9 +297,9 @@ Polymer({
   _observeSelectedDocument(doc) {
     if (doc) {
       if (doc.isVersion) {
-        this.navigateTo('document', doc.uid);
+        this.navigateTo('document', doc);
       } else {
-        this.navigateTo('browse', doc.path);
+        this.navigateTo('browse', doc);
       }
     }
   },

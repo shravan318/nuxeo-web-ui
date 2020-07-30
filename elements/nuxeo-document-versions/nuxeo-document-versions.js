@@ -242,12 +242,12 @@ Polymer({
 
   _showLatest() {
     this._hideList();
-    this.navigateTo('browse', this.document.path);
+    this.navigateTo('browse', this.document);
   },
 
   _showVersion(e) {
     this._hideList();
-    this.navigateTo('document', e.model.item.uid);
+    this.navigateTo('document', e.model.item);
   },
 
   _labelCreate(doc) {

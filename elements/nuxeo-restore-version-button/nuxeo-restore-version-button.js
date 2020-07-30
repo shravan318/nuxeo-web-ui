@@ -100,7 +100,7 @@ Polymer({
       this.$.opRestoreVersion.params = { checkout: true };
       this.$.opRestoreVersion.execute().then(() => {
         this.fire('document-updated');
-        this.navigateTo('browse', this.document.path);
+        this.navigateTo('browse', this.document);
       });
     }
   },

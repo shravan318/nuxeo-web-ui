@@ -363,7 +363,7 @@ Polymer({
       .then((response) => {
         this.$.creationStats.storeType(this.selectedDocType.id);
         this._clear();
-        this.navigateTo('browse', response.path);
+        this.navigateTo('browse', response);
         this._notify(response);
       })
       .catch((err) => {
