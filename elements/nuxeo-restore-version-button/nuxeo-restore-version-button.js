@@ -99,8 +99,11 @@ Polymer({
       this.$.opRestoreVersion.input = this.document.uid;
       this.$.opRestoreVersion.params = { checkout: true };
       this.$.opRestoreVersion.execute().then(() => {
-        this.fire('document-updated');
-        this.navigateTo('browse', this.document);
+        if (Nuxeo && Nuxeo.UI && Nuxeo.UI.config && Nuxeo.UI.config.router.docKey === 'uid') {
+          this.navigateTo('document', this.document.versionableId);
+        } else {
+          this.navigateTo('browse', this.document.path);
+        }
       });
     }
   },
