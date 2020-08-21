@@ -128,40 +128,57 @@ app.router = {
 
   useHashbang: true,
 
-  browse(pathOrDoc, subPage) {
-    if (!pathOrDoc) {
-      // returning '/browse' for compat reasons
-      return '/browse';
+  resolveRoute: (...args) => {
+    if (args.length === 0) {
+      return;
     }
-    let routeKey = 'path';
-    let routeVal = pathOrDoc;
-    if (typeof pathOrDoc === 'object') {
-      routeKey =
-        (Nuxeo && Nuxeo.UI && Nuxeo.UI.config && Nuxeo.UI.config.router && Nuxeo.UI.config.router.docKey) || routeKey;
-      routeVal = pathOrDoc[routeKey];
+    const [obj] = args;
+    if (typeof obj !== 'object') {
+      throw new Error(`cannot resolve route: "${obj}" is not a valid entity object`);
+    }
+    let entityType = obj['entity-type'];
+    if (!entityType) {
+      // XXX Somethimes we don't have the entity type. For example, on nuxeo-document-storage, we were not storing it.
+      // In such cases, we'll assume we are dealing with a document if it has both a path and a uid properties.
+      if (obj.path && obj.uid) {
+        entityType = 'document';
+      } else {
+        throw new Error(`cannot resolve route: object does not have an "entity-type"`);
+      }
+    }
+    if (entityType === 'document') {
+      const routeKey =
+        (Nuxeo && Nuxeo.UI && Nuxeo.UI.config && Nuxeo.UI.config.router && Nuxeo.UI.config.router.docKey) || 'path';
+      const routeVal = obj[routeKey];
       if (!routeVal) {
         throw new Error(`invalid router key: ${routeKey}`);
       }
-    }
-    switch (routeKey) {
-      case 'uid':
-        return app.router.document(routeVal, subPage);
-      case 'path':
-        return `/browse${
-          routeVal
-            ? routeVal
-                .split('/')
-                .map((n) => encodeURIComponent(n))
-                .join('/')
-            : ''
-        }${subPage ? `?p=${encodeURIComponent(subPage)}` : ''}`;
-      default:
-        throw new Error(`invalid router key: ${routeKey}`);
+      switch (routeKey) {
+        case 'uid':
+          return { route: 'document', params: [routeVal] };
+        case 'path':
+          return { route: 'browse', params: [routeVal] };
+        default:
+          throw new Error(`invalid router key: ${routeKey}`);
+      }
     }
   },
 
-  document(idOrDocument, subPage) {
-    return `/doc/${idOrDocument.uid || idOrDocument}${subPage ? `?p=${encodeURIComponent(subPage)}` : ''}`;
+  browse(pathOrDoc, subPage) {
+    const path = pathOrDoc && (typeof pathOrDoc === 'object' ? pathOrDoc.path : pathOrDoc);
+    return `/browse${
+      path
+        ? path
+            .split('/')
+            .map((n) => encodeURIComponent(n))
+            .join('/')
+        : ''
+    }${subPage ? `?p=${encodeURIComponent(subPage)}` : ''}`;
+  },
+
+  document(idOrDoc, subPage) {
+    const id = idOrDoc && (typeof idOrDoc === 'object' ? idOrDoc.uid : idOrDoc);
+    return `/doc/${id}${subPage ? `?p=${encodeURIComponent(subPage)}` : ''}`;
   },
 
   home() {
