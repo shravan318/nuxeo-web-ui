@@ -131,7 +131,7 @@ Polymer({
 
   _urlForPub() {
     if (this.document) {
-      return this.urlFor('browse', this.document, 'publication');
+      return this.urlFor(this.document, 'publication');
     }
   },
 });

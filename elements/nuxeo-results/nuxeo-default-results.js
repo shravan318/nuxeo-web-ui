@@ -111,7 +111,7 @@ Polymer({
         >
           <template>
             <nuxeo-document-thumbnail document="[[item]]"></nuxeo-document-thumbnail>
-            <a class="title ellipsis" href$="[[urlFor('browse', item)]]" on-tap="_navigateLink" data-index="[[index]]">
+            <a class="title ellipsis" href$="[[urlFor(item)]]" on-tap="_navigateLink" data-index="[[index]]">
               [[item.title]]
             </a>
           </template>
