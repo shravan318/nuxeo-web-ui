@@ -39,15 +39,14 @@ Polymer({
         width: var(--nuxeo-document-create-button-width, 56px);
         height: var(--nuxeo-document-create-button-height, 56px);
         color: var(--nuxeo-button-primary-text);
-        --paper-fab-background: var(--nuxeo-button-primary);
-        --paper-fab-keyboard-focus-background: var(--nuxeo-button-primary-focus);
-        @apply --nuxeo-document-create-button;
-        transition: color 0.25s ease-in-out;
+        background: #81c0ff;
+        scale: 1;
+        transition: scale 0.5s ease-in-out;
       }
 
       paper-fab:hover,
       paper-fab:focus {
-        background-color: var(--nuxeo-button-primary-focus);
+        transform: scale(1.1);
       }
 
       #tray {

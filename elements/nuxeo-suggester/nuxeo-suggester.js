@@ -104,22 +104,26 @@ Polymer({
       }
 
       #searchButton {
-        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        // border-left: 1px solid rgba(0, 0, 0, 0.1);
         position: fixed;
         z-index: 100;
         top: 0;
-        color: var(--nuxeo-app-header);
-        @apply --nuxeo-suggester-button;
+        color: #f5f5f5;
+        top:0;
+        right: 0;
+        width: 60px;
+        height: 40px;
+        padding: 10px;
       }
 
       #searchButton:hover {
-        background-color: var(--nuxeo-button-primary);
-        color: var(--nuxeo-button-primary-text);
+        // background-color: rgba(0,0,0,0.1);
+        color: #fff);
       }
 
       #searchButton.toggled {
         color: var(--nuxeo-button-primary-text);
-        background-color: var(--nuxeo-button-primary);
+        background-color: #81c0ff;
         z-index: 1001;
       }
 
@@ -135,7 +139,7 @@ Polymer({
       }
 
       #searchBar {
-        height: 53px;
+        height: 40px;
         background-color: var(--nuxeo-quicksearch-background);
         color: var(--nuxeo-quicksearch-text);
         @apply --layout-horizontal;

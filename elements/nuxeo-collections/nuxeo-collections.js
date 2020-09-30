@@ -51,9 +51,9 @@ Polymer({
 
       .header {
         line-height: 4.2rem;
-        display: inline-block !important;
+        // display: inline-block !important;
         white-space: nowrap;
-        max-width: 70%;
+        // max-width: 70%;
         overflow: hidden;
       }
 

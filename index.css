@@ -17,7 +17,7 @@ nuxeo-app[unresolved] {
 }
 
 [unresolved] #sidebar {
-  background-color: var(--nuxeo-sidebar-background);
+  background-color: #fff;
   width: 52px;
   height: 100%;
   float: left;

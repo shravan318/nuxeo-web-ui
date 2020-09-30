@@ -104,11 +104,13 @@ const template = html`
           @apply --layout-horizontal;
           @apply --layout-center;
           font-size: 1rem;
-          height: 53px;
+          height: 40px;
           padding: 0 16px;
           text-transform: uppercase;
           text-overflow: ellipsis;
-          color: var(--nuxeo-drawer-header);
+          color: #fff;
+          background: #81c0ff;
+          border-left: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         /* layouts */

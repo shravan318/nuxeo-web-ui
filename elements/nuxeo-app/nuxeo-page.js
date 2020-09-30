@@ -50,9 +50,9 @@ Polymer({
         flex: 0 0 auto;
         @apply --layout-horizontal;
         @apply --layout-center;
-        height: var(--nuxeo-drawer-header-height);
-        color: var(--nuxeo-app-header);
-        background: var(--nuxeo-app-header-background);
+        height: 40px;
+        color: #fff;
+        background: #81c0ff;
         box-shadow: var(--nuxeo-app-header-box-shadow);
         overflow-x: auto;
       }
@@ -99,6 +99,9 @@ Polymer({
       </div>
       <div id="content">
         <slot></slot>
+        <div>
+          © 2020, CGI, Inc. All rights reserved.
+        </div>
       </div>
     </div>
   `,

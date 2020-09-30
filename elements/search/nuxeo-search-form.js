@@ -56,7 +56,6 @@ Polymer({
         height: calc(var(--vh, 1vh) * 100);
         width: 100%;
       }
-
       [hidden] {
         display: none !important;
       }
@@ -109,15 +108,15 @@ Polymer({
         top: 0;
         right: 0;
         width: 60px;
-        height: 53px;
-        padding: 16px;
+        height: 40px;
+        padding: 10px;
         z-index: 101;
         border-left: 1px solid var(--divider-color);
       }
 
       .switch:hover {
-        background-color: var(--nuxeo-button-primary);
-        color: var(--nuxeo-button-primary-text);
+        background-color: rgba(0, 0, 0, 0.2);
+        color: #000;
       }
 
       nuxeo-select {
@@ -239,6 +238,10 @@ Polymer({
       #search-container {
         height: 100%;
         position: relative;
+      }
+      .search-header {
+        height: 40px;
+        background: #81c0ff;
       }
     </style>
 

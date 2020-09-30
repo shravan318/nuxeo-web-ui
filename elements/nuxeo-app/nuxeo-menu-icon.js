@@ -40,7 +40,7 @@ Polymer({
 
       :host(.selected) paper-icon-button {
         background: rgba(0, 0, 0, 0.2);
-        color: var(--nuxeo-sidebar-menu-hover);
+        color: #000;
       }
 
       paper-badge {
@@ -52,7 +52,7 @@ Polymer({
       }
 
       paper-icon-button {
-        color: var(--nuxeo-sidebar-menu);
+        color: #767676; /* sidemenu icon colors */
         height: 48px;
         padding: 12px 13px;
         width: var(--nuxeo-sidebar-width);
@@ -60,7 +60,7 @@ Polymer({
 
       paper-icon-button:hover {
         background: rgba(0, 0, 0, 0.2);
-        color: var(--nuxeo-sidebar-menu-hover);
+        color: #000;
       }
     </style>
 

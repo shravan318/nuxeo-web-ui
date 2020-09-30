@@ -137,35 +137,55 @@ Polymer({
       #logo {
         position: fixed;
         width: var(--nuxeo-sidebar-width);
-        height: 53px;
+        height: 40px;
         top: var(--nuxeo-app-top);
         left: 0;
         z-index: 102;
         box-sizing: border-box;
         outline: none;
-        background-color: var(--nuxeo-sidebar-background);
+        background-color: #81c0ff;
       }
 
       #logo img {
-        width: var(--nuxeo-sidebar-width);
-        height: 53px;
+        padding: 5px 0 0 0;
+        width: auto;
+        height: 30px;
       }
 
       /* menu */
       #menu {
-        @apply --nuxeo-sidebar;
+        // @apply --nuxeo-sidebar; /* side menu BG coor*/
         position: fixed;
         width: var(--nuxeo-sidebar-width);
         height: calc(100% - 54px);
         z-index: 100;
-        padding: 53px 0;
+        padding: 40px 0;
         overflow: auto;
         display: flex;
         flex-direction: column;
       }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
 
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
       #logo:hover img {
-        background: rgba(0, 0, 0, 0.2);
+        // background: rgba(0, 0, 0, 0.2);
         color: var(--nuxeo-sidebar-menu-hover);
       }
 
@@ -826,8 +846,8 @@ Polymer({
     RoutingBehavior.baseUrl = this.baseUrl;
   },
 
-  _logo(baseUrl) {
-    return `${baseUrl}themes/${localStorage.getItem('theme') || 'default'}/logo.png`;
+  _logo() {
+    return `images/logo_cgi.png`;
   },
 
   showHome(e) {

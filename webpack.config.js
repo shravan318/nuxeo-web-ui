@@ -169,7 +169,7 @@ const development = merge([
       host: '0.0.0.0',
       historyApiFallback: true,
       proxy: {
-        '/nuxeo': `http://${process.env.NUXEO_HOST || 'localhost:8080'}/`,
+        '/nuxeo': `http://52.247.13.236:9091/`,
       },
     },
   },
