@@ -481,7 +481,7 @@ Polymer({
   properties: {
     productName: {
       type: String,
-      value: 'Nuxeo',
+      value: 'KX360',
     },
 
     baseUrl: {

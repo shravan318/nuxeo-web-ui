@@ -145,7 +145,7 @@ const common = merge([
         jQuery: 'jquery',
       }),
       new HtmlWebpackPlugin({
-        title: 'Nuxeo',
+        title: 'KX360',
         template: 'index.html',
         chunks: ['main'],
         nuxeo: {
