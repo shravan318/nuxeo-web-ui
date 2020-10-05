@@ -33,14 +33,14 @@ limitations under the License.
     </div>
 
     <div role="widget" hidden$="[[!document.properties.dc:nature]]">
-      <label>[[i18n('label.dublincore.nature')]]</label>
+      <label>[[i18n('label.dublincore.category')]]</label>
       <div name="nature">[[formatDirectory(document.properties.dc:nature)]]</div>
     </div>
 
     <nuxeo-directory-suggestion
       role="widget"
       name="subjects"
-      label="[[i18n('label.dublincore.subjects')]]"
+      label="[[i18n('label.dublincore.subcategory')]]"
       directory-name="l10nsubjects"
       value="{{document.properties.dc:subjects}}"
       hidden$="[[!document.properties.dc:subjects.length]]"
@@ -51,7 +51,7 @@ limitations under the License.
     </nuxeo-directory-suggestion>
 
     <div role="widget" hidden$="[[!document.properties.dc:coverage]]">
-      <label>[[i18n('label.dublincore.coverage')]]</label>
+      <label>[[i18n('label.dublincore.supporttier')]]</label>
       <div name="coverage">[[formatDirectory(document.properties.dc:coverage)]]</div>
     </div>
 

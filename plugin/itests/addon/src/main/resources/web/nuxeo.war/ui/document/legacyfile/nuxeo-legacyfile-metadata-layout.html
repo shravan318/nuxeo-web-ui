@@ -38,13 +38,13 @@ LegacyFile added to test backwards compatibility with nuxeo-dropzone (see NXP-29
     </div>
 
     <div role="widget" hidden$="[[!document.properties.dc:nature]]">
-      <label>[[i18n('label.dublincore.nature')]]</label>
+      <label>[[i18n('label.dublincore.category')]]</label>
       <div name="nature">[[formatDirectory(document.properties.dc:nature)]]</div>
     </div>
 
     <nuxeo-directory-suggestion
       role="widget"
-      label="[[i18n('label.dublincore.subjects')]]"
+      label="[[i18n('label.dublincore.subcategory')]]"
       directory-name="l10nsubjects"
       name="subjects"
       value="{{document.properties.dc:subjects}}"
@@ -56,7 +56,7 @@ LegacyFile added to test backwards compatibility with nuxeo-dropzone (see NXP-29
     </nuxeo-directory-suggestion>
 
     <div role="widget" hidden$="[[!document.properties.dc:coverage]]">
-      <label>[[i18n('label.dublincore.coverage')]]</label>
+      <label>[[i18n('label.dublincore.supporttier')]]</label>
       <div name="coverage">[[formatDirectory(document.properties.dc:coverage)]]</div>
     </div>
 
