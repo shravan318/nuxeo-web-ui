@@ -107,7 +107,7 @@ import { microTask } from '@polymer/polymer/lib/utils/async.js';
           }
 
           #ancestors a:hover {
-            color: var(--nuxeo-link-hover-color, #0066ff);
+            color: #fff;
             opacity: 1;
           }
 
