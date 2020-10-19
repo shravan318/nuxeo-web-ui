@@ -321,7 +321,7 @@ const template = html`
         --nuxeo-card: {
           display: block;
           padding: 16px;
-          margin-bottom: var(--nuxeo-card-margin-bottom, 16px);
+          // margin-bottom: var(--nuxeo-card-margin-bottom, 16px);
           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.04);
           font-family: var(--nuxeo-app-font);
           border-radius: 0;

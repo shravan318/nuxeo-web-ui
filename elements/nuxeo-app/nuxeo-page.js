@@ -43,7 +43,7 @@ Polymer({
         flex: 1 1 auto;
         position: relative;
         overflow-y: auto;
-        padding: 16px 16px 0 16px;
+        padding: 5px;
       }
 
       .toolbar {
@@ -54,6 +54,7 @@ Polymer({
         color: #fff;
         background: #81c0ff;
         box-shadow: var(--nuxeo-app-header-box-shadow);
+        border-left: 1px solid var(--nuxeo-app-header-box-shadow);
         overflow-x: auto;
       }
 
